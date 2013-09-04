@@ -1,21 +1,13 @@
 <?php
  
 /*
-Plugin Name: gist embed
-Plugin URI: http://tba
-Description: gist
+Plugin Name: Wordpress Gist Plugin
+Plugin URI: https://github.com/justinmusgrove/wordpress-gist-plugin
+Description: Embed gist into wordpress
 Author: Justin Musgrove
 Version: 1.0
 */
 
-/**
- * Usage:
- * Paste a gist link into a blog post or page and it will be embedded eg:
- * https://gist.github.com/diije/5805069
- *
- * If a gist has multiple files you can select one using a url in the following format:
- * https://gist.github.com/diije/5805069?file=embed-gist.php
- */
 wp_embed_register_handler( 'gist', '/https?:\/\/gist\.github\.com\/([a-z]+)\/([0-9]+)(\?file=.*)?/i', 'wp_embed_handler_gist' );
  
 function wp_embed_handler_gist( $matches, $attr, $url, $rawattr ) {
